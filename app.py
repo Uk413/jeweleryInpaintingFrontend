@@ -4,16 +4,9 @@ from PIL import Image
 from io import BytesIO
 import os
 
-
-
-load_dotenv()
-
-
 st.set_page_config(page_title="Jewelry Image Editor", layout="wide")
 
-
 API_URL = "https://utkarsh134-jeweleryinpaintingapi.hf.space"
-
 
 def main():
     st.title("Jewelry Image Editor")
