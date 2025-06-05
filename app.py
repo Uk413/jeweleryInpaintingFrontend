@@ -29,7 +29,7 @@ def main():
             st.subheader("Edit Instructions")
             prompt = st.text_area(
                 "Describe the change In Image to be made",
-                help="Be specific about the changes you want to make, mention the finger if the model doesnot have jewelery on"
+                help="Be specific about the changes you want to make, mention the finger if the model doesnot have jewelery on",
             )
 
             if st.button("Edit Image", type="primary"):
@@ -82,7 +82,6 @@ def main():
             st.info("Upload an image to get started")
         elif not prompt:
             st.info("Enter edit instructions to modify the image")
-
 
 if __name__ == "__main__":
     main()
