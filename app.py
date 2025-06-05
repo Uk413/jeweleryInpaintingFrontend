@@ -28,8 +28,7 @@ def main():
 
             st.subheader("Edit Instructions")
             prompt = st.text_area(
-                "Describe the change In Image to be made",
-                help="Be specific about the changes you want to make, mention the finger if the model doesnot have jewelery on",
+                "Be specific about the changes you want to make, mention the finger if the model doesnot have jewelery on"
             )
 
             if st.button("Edit Image", type="primary"):
