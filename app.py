@@ -6,7 +6,7 @@ import os
 
 st.set_page_config(page_title="Jewelry Image Editor", layout="wide")
 
-API_URL = "https://utkarsh134-jeweleryinpaintingapi.hf.space"
+API_URL = "https://c094s1n3vc.execute-api.us-east-1.amazonaws.com/dev"
 
 def main():
     st.title("Jewelry Image Editor")
