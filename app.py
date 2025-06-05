@@ -18,7 +18,7 @@ def main():
         uploaded_file = st.file_uploader(
             "Choose a jewelry image...",
             type=["jpg", "jpeg", "png"],
-            help="Upload an image of jewelry (ring, necklace, etc.)",
+            help="Upload a Model.)",
         )
 
         if uploaded_file:
@@ -28,8 +28,8 @@ def main():
 
             st.subheader("Edit Instructions")
             prompt = st.text_area(
-                "Describe how you want to modify the jewelry:",
-                help="Be specific about the changes you want to make"
+                "Describe the change In Image to be made",
+                help="Be specific about the changes you want to make, mention the finger if the model doesnot have jewelery on"
             )
 
             if st.button("Edit Image", type="primary"):
