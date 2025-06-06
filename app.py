@@ -3,16 +3,13 @@ import requests
 from PIL import Image
 from io import BytesIO
 import os
-from dotenv import load_dotenv
 
-
-load_dotenv()
 
 
 st.set_page_config(page_title="Jewelry Image Editor", layout="wide")
 
 
-API_URL = os.getenv("API_URL", "https://32mnonk4bg.execute-api.us-east-1.amazonaws.com/dev")
+API_URL = "https://32mnonk4bg.execute-api.us-east-1.amazonaws.com/dev"
 
 
 def main():
