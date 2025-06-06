@@ -3,10 +3,17 @@ import requests
 from PIL import Image
 from io import BytesIO
 import os
+from dotenv import load_dotenv
+
+
+load_dotenv()
+
 
 st.set_page_config(page_title="Jewelry Image Editor", layout="wide")
 
-API_URL = "https://c094s1n3vc.execute-api.us-east-1.amazonaws.com/dev"
+
+API_URL = os.getenv("API_URL", "https://32mnonk4bg.execute-api.us-east-1.amazonaws.com/dev")
+
 
 def main():
     st.title("Jewelry Image Editor")
@@ -38,11 +45,19 @@ def main():
 
                 try:
                     with st.spinner("Processing image..."):
+                        # Ensure image is in correct format
+                        if image.format not in ['JPEG', 'PNG']:
+                            image = image.convert('RGB')
+                        
+                        # Save to BytesIO with explicit format
+                        img_byte_arr = BytesIO()
+                        image.save(img_byte_arr, format='JPEG')
+                        img_byte_arr.seek(0)
 
                         files = {
                             "file": (
                                 "image.jpg",
-                                uploaded_file.getvalue(),
+                                img_byte_arr.getvalue(),
                                 "image/jpeg",
                             )
                         }
@@ -81,6 +96,7 @@ def main():
             st.info("Upload an image to get started")
         elif not prompt:
             st.info("Enter edit instructions to modify the image")
+
 
 if __name__ == "__main__":
     main()
